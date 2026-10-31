@@ -1,0 +1,126 @@
+Adjacency shape: (27, 27); graph edges: 74
+
+--- Baseline FEM results ---
+Nodes: 27; members: 74
+Tip vertical displacement: -1.084545 mm
+Compliance: 1.084545 J
+Structural mass: 3.226014 kg
+Maximum absolute axial force: 2850.41 N
+
+--- FEM consistency checks ---
+Element strain energy: 0.542273 J
+External work energy: 0.542273 J
+Maximum free-DOF force residual: 3.024e-11 N
+Sum of support reactions (X): -0.000000 N
+Sum of support reactions (Y): 1000.000000 N
+
+Compliance limit: 1.138772 J 
+
+--- Compliance-based removed members ---
+(0, 9)
+(1, 9)
+(2, 10)
+(3, 11)
+(4, 12)
+(5, 13)
+(6, 15)
+(6, 16)
+(7, 16)
+(9, 10)
+(9, 18)
+(9, 19)
+(10, 11)
+(10, 20)
+(11, 12)
+(11, 21)
+(12, 13)
+(12, 22)
+(13, 14)
+(13, 23)
+(14, 15)
+(15, 16)
+(15, 24)
+(16, 17)
+(16, 25)
+
+--- Compliance-based optimization history ---
+Iteration 0: mass = 3.2260 kg, compliance = 1.0845 J, members = 74
+Iteration 1: mass = 3.1855 kg, compliance = 1.0845 J, members = 73
+Iteration 2: mass = 3.1450 kg, compliance = 1.0845 J, members = 72
+Iteration 3: mass = 3.1113 kg, compliance = 1.0845 J, members = 71
+Iteration 4: mass = 3.0775 kg, compliance = 1.0845 J, members = 70
+Iteration 5: mass = 3.0438 kg, compliance = 1.0845 J, members = 69
+Iteration 6: mass = 3.0100 kg, compliance = 1.0845 J, members = 68
+Iteration 7: mass = 2.9763 kg, compliance = 1.0845 J, members = 67
+Iteration 8: mass = 2.9425 kg, compliance = 1.0846 J, members = 66
+Iteration 9: mass = 2.9020 kg, compliance = 1.0846 J, members = 65
+Iteration 10: mass = 2.8615 kg, compliance = 1.0847 J, members = 64
+Iteration 11: mass = 2.8088 kg, compliance = 1.0851 J, members = 63
+Iteration 12: mass = 2.7561 kg, compliance = 1.0856 J, members = 62
+Iteration 13: mass = 2.7034 kg, compliance = 1.0860 J, members = 61
+Iteration 14: mass = 2.6696 kg, compliance = 1.0865 J, members = 60
+Iteration 15: mass = 2.6359 kg, compliance = 1.0868 J, members = 59
+Iteration 16: mass = 2.5954 kg, compliance = 1.0872 J, members = 58
+Iteration 17: mass = 2.5426 kg, compliance = 1.0880 J, members = 57
+Iteration 18: mass = 2.4899 kg, compliance = 1.0889 J, members = 56
+Iteration 19: mass = 2.4372 kg, compliance = 1.0898 J, members = 55
+Iteration 20: mass = 2.3845 kg, compliance = 1.0918 J, members = 54
+Iteration 21: mass = 2.3318 kg, compliance = 1.0938 J, members = 53
+Iteration 22: mass = 2.2790 kg, compliance = 1.0972 J, members = 52
+Iteration 23: mass = 2.2263 kg, compliance = 1.1004 J, members = 51
+Iteration 24: mass = 2.1858 kg, compliance = 1.1030 J, members = 50
+Iteration 25: mass = 2.1331 kg, compliance = 1.1178 J, members = 49
+
+--- Algorithm comparison ---
+
+Compliance-based
+Final mass: 2.133103 kg
+Final compliance: 1.117801 J
+Final members: 49
+Mass reduction: 33.88%
+Compliance increase: +3.07%
+Compliance limit satisfied: True
+
+Force-based
+Final mass: 2.152072 kg
+Final compliance: 1.117801 J
+Final members: 49
+Mass reduction: 33.29%
+Compliance increase: +3.07%
+Compliance limit satisfied: True
+
+Saved: cantilever_deformation.png, topology_comparison.png, algorithm_comparison.png
+
+--- Stress and buckling assessment ---
+
+Initial
+Maximum tensile stress: 28.50 MPa
+Maximum compressive stress: -28.50 MPa
+Minimum Euler buckling factor: 12.344
+Critical buckling member: (0, 1)
+Critical member length: 0.1250 m
+
+Compliance-based
+Maximum tensile stress: 29.17 MPa
+Maximum compressive stress: -29.17 MPa
+Minimum Euler buckling factor: 12.064
+Critical buckling member: (0, 1)
+Critical member length: 0.1250 m
+
+Force-based
+Maximum tensile stress: 29.17 MPa
+Maximum compressive stress: -29.17 MPa
+Minimum Euler buckling factor: 12.064
+Critical buckling member: (0, 1)
+Critical member length: 0.1250 m
+
+Note: Euler factors assume straight, solid circular pin-ended members; 
+they do not establish global structural buckling capacity or material yield safety.
+
+--- Alternative load case: top-right node ---
+Initial: tip displacement = -1.084545 mm, compliance = 1.084545 J, maximum |stress| = 28.50 MPa, minimum Euler factor = 12.344
+Compliance-based: tip displacement = -1.130067 mm, compliance = 1.130067 J, maximum |stress| = 29.17 MPa, minimum Euler factor = 12.064
+Force-based: tip displacement = -1.130067 mm, compliance = 1.130067 J, maximum |stress| = 29.17 MPa, minimum Euler factor = 12.064
+Compliance-based: compliance change vs initial = +4.20%
+Force-based: compliance change vs initial = +4.20%
+Saved: alternative_load_comparison.png
